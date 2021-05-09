@@ -23,12 +23,9 @@ def sum_pairs(nums, goal):
     """
 
 
-    dict = {}
-
-    for i,e in enumerate(nums):
-        if goal - e in dict:
-            return nums[dict.get(goal-e)], nums[i]
-        # store index of current element in dict
-        dict[e] = i
+    for i in range(len(nums)):
+        for j in range(0, i):
+            if nums[i] + nums[j] == goal:
+                return (nums[j], nums[i])
     return ()
             

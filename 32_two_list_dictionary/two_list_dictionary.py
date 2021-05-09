@@ -17,5 +17,7 @@ def two_list_dictionary(keys, values):
    """  
 
     from itertools import zip_longest   
-    return dict(zip_longest(keys, values))
+    values2 = values[:len(keys)]
+
+    return dict(zip_longest(keys, values2))
 
